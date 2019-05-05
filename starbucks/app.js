@@ -31,6 +31,8 @@ app.use(bodyParser.json());
 var basePath = '/'
 app.use(basePath, indexRouter);
 
+var loginPath = '/login'
+app.use(loginPath, loginRouter);
 
 
 // Execute App
