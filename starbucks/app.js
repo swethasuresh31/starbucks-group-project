@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var orderRouter = require('./routes/orders');
 
 var app = express();
 
@@ -33,6 +34,9 @@ app.use(basePath, indexRouter);
 
 var loginPath = '/login'
 app.use(loginPath, loginRouter);
+
+var orderPath = '/order'
+app.use(orderPath, orderRouter);
 
 
 // Execute App
