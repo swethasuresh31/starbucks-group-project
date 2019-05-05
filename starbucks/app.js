@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 var orderRouter = require('./routes/orders');
 var addCardRouter = require('./routes/addcard');
 
@@ -35,6 +37,9 @@ app.use(basePath, indexRouter);
 
 var loginPath = '/login'
 app.use(loginPath, loginRouter);
+
+var signupPath = '/signup'
+app.use(signupPath, signupRouter);
 
 var orderPath = '/order'
 app.use(orderPath, orderRouter);
