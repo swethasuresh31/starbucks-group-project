@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var orderRouter = require('./routes/orders');
+var addCardRouter = require('./routes/addcard');
 
 var app = express();
 
@@ -37,6 +38,9 @@ app.use(loginPath, loginRouter);
 
 var orderPath = '/order'
 app.use(orderPath, orderRouter);
+
+var addCardPath = '/card/add'
+app.use(addCardPath, addCardRouter);
 
 
 // Execute App
