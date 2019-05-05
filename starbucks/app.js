@@ -10,6 +10,7 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var orderRouter = require('./routes/orders');
 var addCardRouter = require('./routes/addcard');
+var paymentRouter = require('./routes/pay');
 
 var app = express();
 
@@ -46,6 +47,9 @@ app.use(orderPath, orderRouter);
 
 var addCardPath = '/card/add'
 app.use(addCardPath, addCardRouter);
+
+var paymentPath = '/pay'
+app.use(paymentPath, paymentRouter);
 
 
 // Execute App
