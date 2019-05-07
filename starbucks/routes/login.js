@@ -6,12 +6,12 @@ var connection = require('../db/connection')
 /* POST login */
 router.post('/', function (req, res, next) {
   //TODO
-  if (!req.body.username && req.body.username === '') {
+  if (!req.body.username || req.body.username === '') {
     res.status(400).send("Username cannot be empty")
     return;
   }
 
-  if (!req.body.password && req.body.password === '') {
+  if (!req.body.password || req.body.password === '') {
     res.status(400).send("Password cannot be empty")
     return;
   }
