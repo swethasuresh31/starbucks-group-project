@@ -36,19 +36,19 @@ app.use(bodyParser.json());
 var basePath = '/'
 app.use(basePath, indexRouter);
 
-var loginPath = 'api/v1/starbucks/login'
+var loginPath = '/api/v1/starbucks/login'
 app.use(loginPath, loginRouter);
 
-var signupPath = 'api/v1/starbucks/signup'
+var signupPath = '/api/v1/starbucks/signup'
 app.use(signupPath, signupRouter);
 
-var orderPath = 'api/v1/starbucks/order'
+var orderPath = '/api/v1/starbucks/order'
 app.use(orderPath, orderRouter);
 
-var addCardPath = 'api/v1/starbucks/card/add'
+var addCardPath = '/api/v1/starbucks/card/add'
 app.use(addCardPath, addCardRouter);
 
-var paymentPath = 'api/v1/starbucks/pay'
+var paymentPath = '/api/v1/starbucks/pay'
 app.use(paymentPath, paymentRouter);
 
 
