@@ -42,7 +42,7 @@ app.use(loginPath, loginRouter);
 var signupPath = '/api/v1/starbucks/signup'
 app.use(signupPath, signupRouter);
 
-var orderPath = '/api/v1/starbucks/order'
+var orderPath = '/api/v1/starbucks/orders'
 app.use(orderPath, orderRouter);
 
 var addCardPath = '/api/v1/starbucks/card/add'

@@ -1,20 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var connection = require('../db/connection')
 
 /* GET order */
 router.post('/', function(req, res, next) {
   //TODO
-  //order query
+  if (!req.body.username || req.body.username === '') {
+    res.status(400).send("Username cannot be empty")
+    return;
+  }
 
   console.log("Orders: " + req.params.courseUid)
-  var query = ""
-  var params = []
+  var query = "SELECT * FROM orders WHERE username=?;"
+  var params = [req.body.username]
   connection.query(query, params, function (error, results, fields) {
     if (error) {
       console.log(error)
       res.status(500).send(error);
     } else {
-      res.status(200).send("Success");
+      res.status(200).send(results);
     }
   });
 });
