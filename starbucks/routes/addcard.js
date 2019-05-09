@@ -4,7 +4,7 @@ var connection = require('../db/connection')
 
 /* POST add card */
 router.post('/', function (req, res, next) {
-  //TODO
+  
   if (!req.body.username || req.body.username === '') {
     res.status(400).send("Username cannot be empty")
     return;
@@ -35,7 +35,7 @@ router.post('/', function (req, res, next) {
     return;
   }
 
-  console.log("Adding card: " + req.body.cardId)
+  console.log("Adding card: " + req.body.cardId + " for user: " + req.body.username)
 
   var query = "INSERT INTO cards(username, card_id, card_code, balance) VALUES(?,?,?,?)"
   var params = [req.body.username, req.body.cardId, req.body.cardCode, req.body.cardBalance]
