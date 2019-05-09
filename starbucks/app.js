@@ -14,10 +14,6 @@ var paymentRouter = require('./routes/pay');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,10 +28,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //Routes
-//Base Route
-var basePath = '/'
-app.use(basePath, indexRouter);
-
 var loginPath = '/api/v1/starbucks/login'
 app.use(loginPath, loginRouter);
 

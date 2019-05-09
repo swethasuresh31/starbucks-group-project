@@ -56,6 +56,7 @@ router.post('/', function (req, res, next) {
       var params1 = [req.body.username, req.body.cardId, req.body.cardCode]
 
       connection.query(query1, params1, function (error, results, fields) {
+        
         if (error) {
           console.log(error)
           connection.query("ROLLBACK;")
@@ -72,20 +73,24 @@ router.post('/', function (req, res, next) {
               res.status(400).send("Insufficient balance");
             } else {
               console.log("Card found with sufficient balance")
+              
               var query2 = "UPDATE cards SET balance=balance-? WHERE username=? AND card_id=? AND card_code=?; "
               var params2 = [req.body.amount, req.body.username, req.body.cardId, req.body.cardCode]
 
               connection.query(query2, params2, function (error, results, fields) {
+                
                 if (error) {
                   console.log(error)
                   connection.query("ROLLBACK;")
                   res.status(500).send(error);
                 } else {
                   console.log("Deducted amount from card")
+                  
                   var query3 = "INSERT INTO orders(username,card_id,product,amount,purchase_ts) VALUES(?,?,?,?,NOW()); "
                   var params3 = [req.body.username, req.body.cardId, req.body.product, req.body.amount]
 
                   connection.query(query3, params3, function (error, results, fields) {
+                    
                     if (error) {
                       console.log(error)
                       connection.query("ROLLBACK;")
@@ -94,7 +99,6 @@ router.post('/', function (req, res, next) {
                       console.log("Order placed")
                       connection.query("COMMIT;")
                       res.status(200).send("Success");
-
                     }
                   })
                 }
