@@ -25,13 +25,13 @@ router.post('/', function (req, res, next) {
       console.log(error)
       res.status(500).send(error);
     } else if(results.length === 0) {
-      res.status(401).send("User not found")
+      res.status(404).send("User not found")
     } else {
       bcrypt.compare(req.body.password, results[0].password, function (error, response) {
         if (!response) {
           res.status(401).send("Username and password do not match")
         } else {
-          res.status(200).send("Success");
+          res.status(200).send("Login Success");
         }
       });
     }
