@@ -4,13 +4,12 @@ var connection = require('../db/connection')
 
 /* GET order */
 router.post('/', function(req, res, next) {
-  //TODO
   if (!req.body.username || req.body.username === '') {
     res.status(400).send("Username cannot be empty")
     return;
   }
 
-  console.log("Orders: " + req.params.courseUid)
+  console.log("Order history rqeuest for user: " + req.params.courseUid)
   var query = "SELECT * FROM orders WHERE username=?;"
   var params = [req.body.username]
   connection.query(query, params, function (error, results, fields) {
