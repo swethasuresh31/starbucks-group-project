@@ -41,7 +41,7 @@ router.post('/', function (req, res, next) {
     return;
   }
 
-  console.log("Adding card: " + req.body.cardId)
+  console.log("Trying to make a purchase")
 
   var query = "START TRANSACTION; "
   var params = []
