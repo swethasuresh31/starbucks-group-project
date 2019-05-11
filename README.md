@@ -10,4 +10,8 @@
 
 ### Architecture Diagram:
 
+
+
+*AWS Container Deployment Diagram
+
 ![Alt deployment-diagram](starbucks/documentation/container-deployment-diagram.png?raw=true "AWS Container deployment diagram")
