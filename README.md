@@ -9,3 +9,5 @@
 ### Project Board, Project Journal, Sprint Task Sheet, Burndown Chart:
 
 ### Architecture Diagram:
+
+![Alt deployment-diagram](starbucks/documentation/container-deployment-diagram.png?raw=true "AWS Container deployment diagram")
