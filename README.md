@@ -16,7 +16,7 @@ Please refer file from this directory for all the details: /starbucks/documentat
 
 * AWS Container Deployment Diagram
 
-![Alt deployment-diagram](starbucks/documentation/container-deployment-diagram.png?raw=true "AWS Container deployment diagram")
+![Alt deployment-diagram](starbucks/documentation/aws-container-deployment-diagram.png?raw=true "AWS Container deployment diagram")
 
 * AWS EC2 Auto Scaling Deployment Diagram
 
