@@ -8,6 +8,8 @@
 
 ### Project Board, Project Journal, Sprint Task Sheet, Burndown Chart:
 
+Please refer file from this directory for all the details: /starbucks/documentation/202 Project documentation.xlsx
+
 ### Architecture Diagram:
 
 
